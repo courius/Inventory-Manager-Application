@@ -1,0 +1,30 @@
+{
+  "P001": {
+    "Name": "Milk",
+    "Category": "Dairy",
+    "Price": 1.5,
+    "Quantity": 30,
+    "Minimum Stock": 35
+  },
+  "P002": {
+    "Name": "Apple",
+    "Category": "Fruit",
+    "Price": 0.5,
+    "Quantity": 50,
+    "Minimum Stock": 30
+  },
+  "P003": {
+    "Name": "Eggs",
+    "Category": "Dairy",
+    "Price": 2.4,
+    "Quantity": 20,
+    "Minimum Stock": 25
+  },
+  "P004": {
+    "Name": "Water",
+    "Category": "Beverages",
+    "Price": 1.0,
+    "Quantity": 19,
+    "Minimum Stock": 15
+  }
+}

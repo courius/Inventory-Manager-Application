@@ -1,0 +1,51 @@
+[
+  {
+    "type": "added",
+    "product_id": "P001",
+    "product_name": "Milk",
+    "quantity": 30,
+    "timestamp": "2026-03-23T08:03:18.631422"
+  },
+  {
+    "type": "added",
+    "product_id": "P002",
+    "product_name": "Apple",
+    "quantity": 50,
+    "timestamp": "2026-03-23T08:03:39.419336"
+  },
+  {
+    "type": "added",
+    "product_id": "P003",
+    "product_name": "Eggs",
+    "quantity": 20,
+    "timestamp": "2026-03-23T08:04:14.752767"
+  },
+  {
+    "type": "sale",
+    "product_id": "P003",
+    "product_name": "Eggs",
+    "quantity": -2,
+    "timestamp": "2026-03-23T08:04:31.443955"
+  },
+  {
+    "type": "delivery",
+    "product_id": "P003",
+    "product_name": "Eggs",
+    "quantity": 2,
+    "timestamp": "2026-03-23T08:04:53.238226"
+  },
+  {
+    "type": "added",
+    "product_id": "P004",
+    "product_name": "Water",
+    "quantity": 20,
+    "timestamp": "2026-03-23T08:18:49.403208"
+  },
+  {
+    "type": "sale",
+    "product_id": "P004",
+    "product_name": "Water",
+    "quantity": -1,
+    "timestamp": "2026-03-23T08:19:12.466649"
+  }
+]
