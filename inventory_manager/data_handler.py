@@ -9,9 +9,6 @@ This module provides functions for persistent storage and data export.
 It handles loading and saving inventory and transactions as JSON,
 and exporting reports as CSV and text files.
 
-ADAPTED FROM A3: All functions updated to work with Product and Inventory objects.
-
-YOU DO NOT NEED TO MODIFY THIS FILE - just include it in your submission.
 """
 
 import json
@@ -19,10 +16,6 @@ import csv
 from product import Product
 from inventory import Inventory
 
-
-# =============================================================================
-# JSON PERSISTENCE FUNCTIONS (ADAPTED FROM A3)
-# =============================================================================
 
 def load_inventory(filename):
     """
@@ -145,7 +138,7 @@ def save_transactions(transactions, filename):
 
 
 # =============================================================================
-# EXPORT FUNCTIONS (ADAPTED FROM A3)
+# EXPORT FUNCTIONS
 # =============================================================================
 
 def export_inventory_to_csv(inventory, filename):

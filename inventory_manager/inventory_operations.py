@@ -11,18 +11,10 @@ Inventory operations module.
 This module contains all menu handler functions for inventory management.
 These functions interact with Product and Inventory objects.
 
-ADAPTED FROM A3: Replace TODO sections to use class methods instead of 
-dictionary operations.
 """
 
 import transaction_operations
 
-
-# =============================================================================
-# MENU HANDLER FUNCTIONS (ADAPT FROM A3)
-# =============================================================================
-# These functions are based on the A3 code.
-# UPDATE the marked TODO sections to use Product and Inventory class methods.
 
 def view_all_products_menu(inventory):
     """Display all products in formatted table."""
@@ -49,7 +41,7 @@ def add_product_menu(inventory, transactions):
     """Add a new product to inventory."""
     print("\n--- Add New Product ---")
     
-    # Get product name (REUSABLE - no changes needed)
+    # Get product name
     name = input("Enter product name: ").strip()
     
     product_id = inventory.find_by_name(name)
@@ -58,7 +50,7 @@ def add_product_menu(inventory, transactions):
         print(f"Error: Product '{name}' already exists.")
         return False
     
-    # Get remaining details (REUSABLE - no changes needed)
+    # Get remaining details
     from main import get_valid_float, get_valid_int
     category = input("Enter category: ").strip()
     price = get_valid_float("Enter price (€): ", min_value=0.01)
@@ -67,7 +59,7 @@ def add_product_menu(inventory, transactions):
     
     product_id = inventory.add_product(name, category, price, qty, min_stock)
     
-    # Log transaction (REUSABLE - no changes needed)
+    # Log transaction
     transaction_operations.log_transaction(transactions, "added", product_id, name, qty)
     
     print(f"\nProduct '{name}' added successfully with ID: {product_id}")
@@ -78,7 +70,7 @@ def update_stock_menu(inventory, transactions):
     """Update stock for a product (sale or delivery)."""
     print("\n--- Update Stock ---")
     
-    # Get product name (REUSABLE - no changes needed)
+    # Get product name
     name = input("Enter product name: ").strip()
     
     product_id = inventory.find_by_name(name)
@@ -89,14 +81,14 @@ def update_stock_menu(inventory, transactions):
     
     product = inventory.get_product(product_id)
     
-    # Get transaction type (REUSABLE - no changes needed)
+    # Get transaction type
     transaction_type = input("Is this a (S)ale or (D)elivery? ").strip().lower()
     
     while transaction_type not in ['s', 'd', 'sale', 'delivery']:
         print("Error: Please enter 'S' for sale or 'D' for delivery")
         transaction_type = input("Is this a (S)ale or (D)elivery? ").strip().lower()
     
-    # Get quantity (REUSABLE - no changes needed)
+    # Get quantity
     from main import get_valid_int
     quantity = get_valid_int("Enter quantity: ", min_value=1)
     
@@ -110,7 +102,7 @@ def update_stock_menu(inventory, transactions):
             change = quantity
             product.update_stock(change)
         
-        # Log transaction (REUSABLE - no changes needed)
+        # Log transaction
         transaction_operations.log_transaction(transactions, trans_type, product_id, product.name, change)
         
         print(f"\nStock updated! {product.name} now has {product.quantity} units.")
@@ -125,7 +117,7 @@ def update_product_details_menu(inventory):
     """Update product details (name, category, price, min_stock)."""
     print("\n--- Update Product Details ---")
     
-    # Get product name (REUSABLE - no changes needed)
+    # Get product name
     name = input("Enter product name: ").strip()
     
     product_id = inventory.find_by_name(name)
@@ -136,14 +128,14 @@ def update_product_details_menu(inventory):
     
     product = inventory.get_product(product_id)
     
-    # Display current details (REUSABLE structure, need to update access)
+    # Display current details
     print(f"\nCurrent details for {product.product_id}:")
     print(f"  Name: {product.name}")
     print(f"  Category: {product.category}")
     print(f"  Price: €{product.price:.2f}")
     print(f"  Min Stock: {product.min_stock}")
     
-    # Get update choice (REUSABLE - no changes needed)
+    # Get update choice
     print("\nWhat would you like to update?")
     print("1. Name")
     print("2. Category")
@@ -195,7 +187,7 @@ def remove_product_menu(inventory, transactions):
     """Remove a product from inventory."""
     print("\n--- Remove Product ---")
     
-    # Get product name (REUSABLE - no changes needed)
+    # Get product name
     name = input("Enter product name to remove: ").strip()
     
     product_id = inventory.find_by_name(name)
@@ -204,14 +196,14 @@ def remove_product_menu(inventory, transactions):
         print(f"Error: Product '{name}' not found in inventory.")
         return False
     
-    # Confirm removal (REUSABLE - no changes needed)
+    # Confirm removal
     confirm = input(f"Are you sure you want to remove '{name}'? (yes/no): ").strip().lower()
     
     if confirm == 'yes':
         removed = inventory.remove_product(product_id)
         
         if removed:
-            # Log transaction (REUSABLE - no changes needed)
+            # Log transaction
             transaction_operations.log_transaction(transactions, "removed", product_id, removed.name, 0)
             print(f"\nProduct '{removed.name}' removed successfully.")
             return True
@@ -306,5 +298,5 @@ def view_transaction_log_menu(transactions):
     from main import get_valid_int
     num = get_valid_int("How many recent transactions to display? (default 10): ", min_value=1)
     
-    # Use transaction_operations module (REUSABLE - no changes needed)
+    # Use transaction_operations module
     transaction_operations.view_transaction_log(transactions, num)

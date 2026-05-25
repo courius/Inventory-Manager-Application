@@ -11,9 +11,6 @@ Transaction operations module.
 This module provides functions for logging and viewing transactions.
 Transactions are stored as a simple list of dictionaries (same as A2/A3).
 
-REUSED FROM A2: These functions are identical to A2 - no changes needed for A4.
-
-YOU DO NOT NEED TO MODIFY THIS FILE - just include it in your submission.
 """
 
 from datetime import datetime
@@ -22,8 +19,6 @@ from datetime import datetime
 def log_transaction(transactions, trans_type, product_id, product_name, quantity):
     """
     Log a transaction to the transaction list.
-    
-    REUSED FROM A2 - NO changes needed.
     
     Parameters:
         transactions (list): The transaction list
@@ -45,8 +40,6 @@ def log_transaction(transactions, trans_type, product_id, product_name, quantity
 def view_transaction_log(transactions, num_recent=10):
     """
     Display recent transactions.
-    
-    REUSED FROM A2 - NO changes needed.
     
     Parameters:
         transactions (list): The transaction list

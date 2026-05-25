@@ -18,25 +18,23 @@ Transactions remain as a simple list (not a class).
 # =============================================================================
 from datetime import datetime
 
-# Import your classes
+
 from product import Product
 from inventory import Inventory
 
-# Import modules
+
 import data_handler
 import transaction_operations
 import inventory_operations
 
 
 # =============================================================================
-# INPUT VALIDATION FUNCTIONS (FROM A2)
+# INPUT VALIDATION FUNCTIONS
 # =============================================================================
 
 def get_valid_float(prompt, min_value=0.0):
     """
     Prompt the user for a float value and validate it.
-    
-    REUSED FROM A2 - NO changes needed.
     
     Parameters:
         prompt (str): The message to display to the user
@@ -59,8 +57,6 @@ def get_valid_float(prompt, min_value=0.0):
 def get_valid_int(prompt, min_value=0):
     """
     Prompt the user for an integer value and validate it.
-    
-    REUSED FROM A2 - NO changes needed.
     
     Parameters:
         prompt (str): The message to display to the user
@@ -214,37 +210,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# =============================================================================
-# REFERENCES & AI STATEMENT
-# =============================================================================
-# References to any external sources used (following Canvas guidelines):
-# No external sources were used.
-#
-# AI Tool Usage:
-# If AI tools were used, provide complete transparency including prompts,
-# responses, and how you adapted them. Add working link to chat(s). 
-# If not used, state: "No AI tools used."
-# 
-# Gemini AI was used at the end of the completion of the assignment to check
-# for any hidden errors or small mistakes given the size of the project.
-#
-# Prompt: "Find any hidden errors in the files like misspelling an attribute name
-# when trying to access it for example."
-#
-# =============================================================================
-
-# =============================================================================
-# SELF-REFLECTION (2-3 sentences)
-# =============================================================================
-# Write about the most challenging aspect of this assignment 
-# and what you learned from it:
-# The most challenging aspect was probably identifying when is it that I need to
-# use the actual private attribute syntax __ or when I can just access the name
-# given that I used the @property decorator.
-#
-# Now that I have completed it and gone through the different files, inside and
-# outside classes, I understand how accessing class attributes from outside 
-# works much better.
-#
-# =============================================================================
